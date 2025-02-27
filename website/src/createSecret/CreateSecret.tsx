@@ -102,7 +102,7 @@ const CreateSecret = () => {
         message={errors.secret?.message}
         onClick={() => clearErrors('secret')}
       />
-      <Typography component="h1" variant="h4" align="center">
+      <Typography component="h1" variant="h3" align="center">
         {t('create.title')}
       </Typography>
       <form onSubmit={handleSubmit(onSubmit)}>

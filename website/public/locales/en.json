@@ -1,18 +1,18 @@
 {
   "create": {
-    "title": "Encrypt message",
-    "inputSecretLabel": "Secret message",
-    "inputSecretPlaceholder": "Message to encrypt locally in your browser",
-    "buttonEncrypt": "Encrypt Message",
+    "title": "Salaourn Secret Service",
+    "inputSecretLabel": "Create a secret message",
+    "inputSecretPlaceholder": "Message to encrypt...",
+    "buttonEncrypt": "Create Secret",
     "buttonEncryptLoading": "Encrypting message...",
     "inputOneTimeLabel": "One-time download",
     "inputPasswordLabel": "Custom decryption key",
     "inputGenerateLabel": "Generate decryption key"
   },
   "upload": {
-    "title": "Drop file to upload",
-    "caption": "File upload is designed for small files like ssh keys and certificates.",
-    "errorFileTooLarge": "File is too large"
+    "title": "Click the icon or drag file to upload",
+    "caption": "Designed for small files like SSH keys / certificates.",
+    "errorFileTooLarge": "File too large"
   },
   "display": {
     "titleFetching": "Fetching from database, please hold...",
@@ -36,7 +36,7 @@
     "subtitleExpired": "No secret lasts forever. All stored secrets will expire and self destruct automatically. Lifetime varies from one hour up to one week."
   },
   "result": {
-    "title": "Secret stored in database",
+    "title": "Secret created!",
     "subtitleDownloadOnce": "Remember that secrets can only be downloaded once if not set otherwise. So do not open the link yourself.",
     "subtitleChannel": "The cautious should send the decryption key in a separate communication channel.",
     "rowLabelOneClick": "One-click link",
@@ -58,36 +58,14 @@
     "dialogConfirm": "Delete",
     "dialogCancel": "Cancel"
   },
-  "attribution": {
-    "createdBy": "Created by",
-    "translatedBy": "Translated by",
-    "translatorName": "",
-    "translatorLink": ""
-  },
   "expiration": {
     "legend": "The encrypted message will be deleted automatically after",
     "optionOneHourLabel": "One hour",
     "optionOneDayLabel": "One day",
     "optionOneWeekLabel": "One week"
   },
-  "features": {
-    "title": "Share secrets securely with ease",
-    "subtitle": "Yopass is created to reduce the amount of clear text passwords stored in email and chat conversations by encrypting and generating a short lived link which can only be viewed once.",
-    "featureEndToEndTitle": "End-to-end encryption",
-    "featureEndToEndText": "Encryption and decryption are being made locally in the browser. The key is never stored with yopass.",
-    "featureSelfDestructionTitle": "Self destruction",
-    "featureSelfDestructionText": "Encrypted messages have a fixed lifetime and will be deleted automatically after expiration.",
-    "featureOneTimeTitle": "One-time downloads",
-    "featureOneTimeText": "The encrypted message can only be downloaded once which reduces the risk of someone peeking at your secrets.",
-    "featureSimpleSharingTitle": "Simple sharing",
-    "featureSimpleSharingText": "Yopass generates a unique one click link for the encrypted file or message. The decryption password can alternatively be sent separately.",
-    "featureNoAccountsTitle": "No accounts needed",
-    "featureNoAccountsText": "Sharing should be quick and easy; No additional information except the encrypted secret is stored in the database.",
-    "featureOpenSourceTitle": "Open source software",
-    "featureOpenSourceText": "Yopass encryption mechanism are built on open source software meaning full transparency with the possibility to audit and submit features."
-  },
   "header": {
-    "buttonHome": "Home",
-    "buttonUpload": "Upload"
+    "buttonHome": "Back to Home",
+    "buttonUpload": "Upload Files"
   }
 }

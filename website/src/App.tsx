@@ -1,11 +1,9 @@
-import { Container } from '@mui/material';
+import { Container, CssBaseline } from '@mui/material';
 import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 
 import { Header } from './shared/Header';
 import { Routing } from './Routing';
-import { Features } from './shared/Features';
-import { Attribution } from './shared/Attribution';
-import { theme } from './theme';
+import theme from './theme';
 import { HashRouter } from 'react-router-dom';
 
 const App = () => {
@@ -21,12 +19,11 @@ const App = () => {
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
+        <CssBaseline />
         <HashRouter>
           <Header />
           <Container maxWidth={'lg'}>
             <Routing />
-            <Features />
-            <Attribution />
           </Container>
         </HashRouter>
       </ThemeProvider>
