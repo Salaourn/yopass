@@ -8,10 +8,9 @@ on:
 jobs:
   Deploy:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Clone repository
-        uses: actions/checkout@v2
-
       - name: Deploy Salaourn Secret Service
         uses: appleboy/ssh-action@master
         with:
@@ -20,4 +19,13 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            pwd
+            REPO_DIR="$(basename ${{ github.repository }})"
+            if [ -d "$REPO_DIR" ]; then
+              cd "$REPO_DIR"
+              git pull origin master
+            else
+              git clone https://$GH_TOKEN@github.com/${{ github.repository }}.git
+              cd "$REPO_DIR"
+            fi
+            docker-compose -f docker-compose-prod.yml build --no-cache
+            docker-compose -f docker-compose-prod.yml up -d --force-recreate
