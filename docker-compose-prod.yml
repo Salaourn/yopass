@@ -3,6 +3,7 @@ version: "3.0"
 services:
   memcached:
     image: memcached
+    container_name: memcached
     restart: always
     expose:
       - "11211"
@@ -13,12 +14,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    expose:
+      - "1337"
     restart: always
-    ports:
-      - "127.0.0.1:8080:8080"
-    command: "--memcached=memcached:11211 --port 8080"
+    command: ["--database=memcached", "--memcached=memcached:11211"]
     environment:
       - VIRTUAL_HOST=secret.salaourn.com
       - LETSENCRYPT_HOST=secret.salaourn.com
       - LETSENCRYPT_EMAIL=dprisc97@gmail.com
     network_mode: bridge
+    links:
+      - memcached
