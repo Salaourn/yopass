@@ -1,0 +1,23 @@
+name: Deploy [MAIN]
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  Deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Deploy Salaourn Secret Service
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            pwd
