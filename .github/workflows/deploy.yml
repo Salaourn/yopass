@@ -7,7 +7,7 @@ on:
 
 jobs:
   Deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
